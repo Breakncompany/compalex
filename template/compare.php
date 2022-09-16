@@ -92,7 +92,7 @@
                                 echo 'style="color: red;" class="new" ';
                             } ?>><b style="white-space: pre"><?php echo $fieldName; ?></b>
                                 <span <?php if (isset($tparam['changeType']) && $tparam['changeType']): ?>style="color: red;" class="new" <?php endif;?>>
-                                    <?php echo $tparam['dtype']; ?>
+                                    <?php echo $tparam['dtype']; ?> / <?php echo $tparam['IS_NULLABLE']; ?> / <?php echo $tparam['COLUMN_DEFAULT']; ?> / <?php echo $tparam['COLUMN_KEY']; ?>
                                 </span>
                             </li>
                         <?php } ?>

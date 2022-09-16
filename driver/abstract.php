@@ -87,6 +87,24 @@ abstract class BaseDriver
                         $sArray[$v][$f]['changeType'] = true;
                         break;
                     }
+                    case (isset($fArray[$v][$f]['IS_NULLABLE']) && isset($sArray[$v][$f]['IS_NULLABLE']) && ($fArray[$v][$f]['IS_NULLABLE'] != $sArray[$v][$f]['IS_NULLABLE'])) :
+                    {
+                        $fArray[$v][$f]['changeType'] = true;
+                        $sArray[$v][$f]['changeType'] = true;
+                        break;
+                    }
+                    case (isset($fArray[$v][$f]['COLUMN_DEFFAULT']) && isset($sArray[$v][$f]['COLUMN_DEFFAULT']) && ($fArray[$v][$f]['COLUMN_DEFFAULT'] != $sArray[$v][$f]['COLUMN_DEFFAULT'])) :
+                    {
+                        $fArray[$v][$f]['changeType'] = true;
+                        $sArray[$v][$f]['changeType'] = true;
+                        break;
+                    }
+                    case (isset($fArray[$v][$f]['COLUMN_KEY']) && isset($sArray[$v][$f]['COLUMN_KEY']) && ($fArray[$v][$f]['COLUMN_KEY'] != $sArray[$v][$f]['COLUMN_KEY'])) :
+                    {
+                        $fArray[$v][$f]['changeType'] = true;
+                        $sArray[$v][$f]['changeType'] = true;
+                        break;
+                    }
                 }
             }
             $out[$v] = array(

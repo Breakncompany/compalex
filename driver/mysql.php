@@ -79,7 +79,10 @@ class Driver extends BaseDriver
         $query = "SELECT
                     cl.TABLE_NAME ARRAY_KEY_1,
                     cl.COLUMN_NAME ARRAY_KEY_2,
-                    cl.COLUMN_TYPE dtype
+                    cl.COLUMN_TYPE dtype,
+                    cl.IS_NULLABLE,
+                    cl.COLUMN_DEFAULT,
+                    cl.COLUMN_KEY
                   FROM information_schema.columns cl,  information_schema.TABLES ss
                   WHERE
                     cl.TABLE_NAME = ss.TABLE_NAME AND
